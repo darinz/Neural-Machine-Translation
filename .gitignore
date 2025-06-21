@@ -129,36 +129,22 @@ dmypy.json
 .pyre/
 
 # Project specific
-# Data files
 data/
-*.txt
-*.csv
-*.tsv
-*.json
-*.zip
-*.tar.gz
-
-# Model checkpoints and logs
 checkpoints/
 logs/
 results/
-cache/
+*.pt
+*.pth
+*.ckpt
 
-# TensorBoard logs
-runs/
-tensorboard_logs/
-
-# Weights & Biases
-wandb/
-
-# IDE files
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 
-# OS files
+# OS
 .DS_Store
 .DS_Store?
 ._*
@@ -169,24 +155,4 @@ Thumbs.db
 
 # Temporary files
 *.tmp
-*.temp
-*.bak
-*.backup
-
-# Large files
-*.pkl
-*.pickle
-*.h5
-*.hdf5
-*.pth
-*.pt
-*.ckpt
-
-# Exceptions for important model files
-!checkpoints/*.pt
-!checkpoints/*.pth
-!checkpoints/*.ckpt
-
-# Exceptions for important data files
-!data/README.md
-!data/.gitkeep 
+*.temp 
