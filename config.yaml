@@ -1,0 +1,64 @@
+# Neural Machine Translation Configuration
+
+# Model Configuration
+model:
+  # RNN Configuration
+  rnn_embedding_dim: 256
+  rnn_hidden_dim: 512
+  rnn_num_layers: 2
+  rnn_dropout: 0.1
+  rnn_bidirectional: true
+  
+  # Transformer Configuration
+  transformer_d_model: 512
+  transformer_nhead: 8
+  transformer_num_layers: 6
+  transformer_dim_feedforward: 2048
+  transformer_dropout: 0.1
+  transformer_max_position_embeddings: 5000
+
+# Training Configuration
+training:
+  batch_size: 64
+  learning_rate: 0.001
+  epochs: 10
+  warmup_steps: 4000
+  max_grad_norm: 1.0
+  weight_decay: 0.01
+  scheduler: "cosine"  # "cosine", "linear", "constant"
+  early_stopping_patience: 5
+  save_best_only: true
+  gradient_accumulation_steps: 1
+
+# Data Configuration
+data:
+  max_length: 50
+  min_freq: 2
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+  src_lang: "es"
+  tgt_lang: "en"
+  lowercase: true
+  remove_punctuation: false
+  data_dir: "data"
+  cache_dir: "cache"
+
+# Logging Configuration
+logging:
+  log_level: "INFO"
+  log_dir: "logs"
+  tensorboard: true
+  wandb: false
+  wandb_project: "neural-machine-translation"
+  wandb_entity: null
+  save_attention_plots: true
+  log_interval: 100
+
+# General Settings
+seed: 42
+device: "auto"  # "auto", "cpu", "cuda"
+num_workers: 4
+pin_memory: true
+checkpoint_dir: "checkpoints"
+results_dir: "results" 
